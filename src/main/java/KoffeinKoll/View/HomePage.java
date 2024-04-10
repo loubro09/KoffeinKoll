@@ -24,6 +24,7 @@ import javafx.scene.shape.ArcType;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -81,6 +82,31 @@ public class HomePage extends Application{
             infoButton.setStyle(styleButtons);
             accountButton.setStyle(styleButtons);
             logoutButton.setStyle(styleButtons);
+
+            Text chart = GlyphsDude.createIcon(FontAwesomeIcon.AREA_CHART, "2em");
+            chart.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            statisticsButton.setGraphic(chart);
+
+            Text info = GlyphsDude.createIcon(FontAwesomeIcon.INFO_CIRCLE, "2em");
+            info.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            infoButton.setGraphic(info);
+
+            Text account = GlyphsDude.createIcon(FontAwesomeIcon.USER, "2em");
+            account.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            accountButton.setGraphic(account);
+
+            Text log = GlyphsDude.createIcon(FontAwesomeIcon.SIGN_OUT, "2em");
+            log.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            logoutButton.setGraphic(log);
+
 
             JFXButton logBeverageButton = new JFXButton("Log Beverage");
             logBeverageButton.setStyle("-fx-background-color:\n" +
@@ -147,6 +173,16 @@ public class HomePage extends Application{
             // Skapa knappen för "Log Beverage"
             /*Button logBeverageButton = new Button("Log Beverage");
 
+            Label coffeeIcon = GlyphsDude.createIcon(FontAwesomeIcon.COFFEE, "2em");
+coffeeIcon.setStyle("-fx-text-fill: white;"); // Adjust color as needed
+
+// Add FontAwesomeIcon to the button
+logBeverageButton.setGraphic(coffeeIcon);
+
+// Apply styles to the button
+logBeverageButton.setStyle("-fx-background-color: #090a0c, linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%), linear-gradient(#8fbc8f, #8fbc8f), radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: \"Arial\"; -fx-font-size: 20px; -fx-padding: 10 20 10 20;");
+
+
             // Tillämpa stil på knappen
             logBeverageButton.setStyle("-fx-background-color: #004600; -fx-text-fill: #c2ffc2; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
 */
@@ -155,6 +191,15 @@ public class HomePage extends Application{
             logBeverageButtonHBox.setAlignment(Pos.CENTER);
             logBeverageButtonHBox.setSpacing(20);
             //logBeverageButton.ge (GlyphsDude.createIcon(FontAwesomeIcon.COFFEE));
+
+            Text coffeeIcon = GlyphsDude.createIcon(FontAwesomeIcon.COFFEE, "2em");
+            coffeeIcon.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            logBeverageButton.setGraphic(coffeeIcon);
+
+// Apply styles to the button
+            logBeverageButton.setStyle("-fx-background-color: #090a0c, linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%), linear-gradient(#8fbc8f, #8fbc8f), radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: \"Arial\"; -fx-font-size: 20px; -fx-padding: 10 20 10 20;");
 
 
             // Skapa en ny VBox för att innehålla den nya "Log Beverage" knappen och den befintliga knappanelen

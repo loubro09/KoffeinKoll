@@ -20,9 +20,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class LogInPage extends Application {
-
     private Stage logInStage;
-
     @Override
     public void start(Stage logInStage) {
         this.logInStage = logInStage;
@@ -30,41 +28,49 @@ public class LogInPage extends Application {
         logInStage.setTitle("KoffeinKoll - Caffeine Management Tool");
         logInStage.setWidth(800);
         logInStage.setHeight(800);
-
-
+        //Huvudtitel
         Label titleLabel = new Label("KoffeinKoll");
         titleLabel.setFont(Font.font("Arial", FontWeight.BOLD, 46));
 
-
+        //Rubrik ovanför textrutor
         Label userNameLabel = new Label("Username");
         userNameLabel.setFont(Font.font("Arial", FontWeight.BOLD, 20));
-
         Label passwordLabel = new Label("Password");
         passwordLabel.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 
+        // Definierar den färg som all rubrikstext bör ha
         Color labelColor = Color.rgb(0, 60, 0);
         titleLabel.setTextFill(labelColor);
         userNameLabel.setTextFill(labelColor);
         passwordLabel.setTextFill(labelColor);
 
-        TextField userNameField = new TextField();
-        userNameField.setPromptText("Enter username");
-        userNameField.setFont(Font.font("Arial", 14));
-        userNameField.setPrefWidth(220);
-        userNameField.setPrefHeight(30);
+        //textrutorna
 
-        TextField passwordField = new TextField();
+        TextField userNameField = textField();
+        userNameField.setPromptText("Enter username");
+        TextField passwordField = textField();
         passwordField.setPromptText("Enter password ");
-        passwordField.setFont(Font.font("Arial", 14));
-        passwordField.setPrefWidth(220);
-        passwordField.setPrefHeight(30);
 
         Hyperlink registration = new Hyperlink("Not registered? Create an account!");
         registration.setFont(Font.font("Arial", 14));
 
+        String styleButtons = "-fx-background-color:\n" +
+                "            #090a0c,\n" +
+                "            linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%),\n" +
+                "            linear-gradient(#c0dbad, #8fbc8f),\n" +
+                "            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                "    -fx-background-radius: 5,4,3,5;\n" +
+                "    -fx-background-insets: 0,1,2,0;\n" +
+                "    -fx-text-fill: white;\n" +
+                "    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                "    -fx-font-family: \"Arial\";\n" +
+                "    -fx-text-fill: linear-gradient(black, black);\n" +
+                "    -fx-font-size: 20px;\n" +
+                "    -fx-padding: 10 20 10 20;";
+
         Button logInButton = new Button("Log in");
-        logInButton.setPrefWidth(100);
-        logInButton.setPrefHeight(30);
+        logInButton.setStyle(styleButtons);
+
 
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
@@ -101,6 +107,15 @@ public class LogInPage extends Application {
         logInStage.show();
     }
 
+    //konstanter och skuggorna till TextFields
+    private TextField textField(){
+        TextField fieldStyle = new TextField();
+        fieldStyle.setFont(Font.font("Arial", 14));
+        fieldStyle.setPrefWidth(220);
+        fieldStyle.setPrefHeight(30);
+        fieldStyle.setStyle(" -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
+        return fieldStyle;
+    }
     public static void main(String[] args) {
         launch(args);
     }

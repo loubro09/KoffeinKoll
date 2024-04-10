@@ -13,7 +13,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class LogInPage extends Application {
+
     private Stage logInStage;
+
     @Override
     public void start(Stage stage) throws Exception {
         this.logInStage =logInStage;

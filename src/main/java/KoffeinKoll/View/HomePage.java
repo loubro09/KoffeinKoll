@@ -1,4 +1,4 @@
-package KoffeinKoll;
+package KoffeinKoll.View;
 
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -70,12 +70,20 @@ public class HomePage extends Application{
            // BorderPane.setAlignment(buttonHBox, Pos.CENTER);
 
             // Creating an Arc for caffeine intake display
-            Arc arc = new Arc(100, 100, 80, 80, 90, 0);
+           /* Arc arc = new Arc(100, 100, 80, 80, 90, 0);
             arc.setType(ArcType.OPEN);
             arc.setStroke(Color.DARKGREEN);
             arc.setStrokeWidth(10);
             arc.setFill(null);
-            borderPane.setCenter(arc);
+            borderPane.setCenter(arc);*/
+
+            CustomGauge customGauge = new CustomGauge();
+            //borderPane.setCenter(customGauge);
+            BorderPane.setAlignment(customGauge, Pos.TOP_CENTER); // Center the gauge
+            Insets gaugeMargins = new Insets(20, 200, 200, 200); // Top, Right, Bottom, Left
+            BorderPane.setMargin(customGauge, gaugeMargins);
+            borderPane.setCenter(customGauge);
+
 
             // Creating a VBox for main page
             HBox topHBox = new HBox();

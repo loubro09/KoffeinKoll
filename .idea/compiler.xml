@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="KoffeinKoll" options="--add-exports java.base/java=java" />
+      <module name="KoffeinKoll" options="" />
     </option>
   </component>
 </project>

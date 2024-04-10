@@ -48,7 +48,7 @@ public class HomePage extends Application{
             Button logoutButton = new Button("Logout");
 
             // Apply styles to buttons
-            accountButton.setStyle("-fx-background-color: #004600; -fx-text-fill: #c2ffc2; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
+            accountButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
             statisticsButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
             infoButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
             logoutButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
@@ -83,6 +83,7 @@ public class HomePage extends Application{
             Insets gaugeMargins = new Insets(20, 200, 200, 200); // Top, Right, Bottom, Left
             BorderPane.setMargin(customGauge, gaugeMargins);
             borderPane.setCenter(customGauge);
+
 
 
             // Creating a VBox for main page

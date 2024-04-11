@@ -3,15 +3,11 @@ package KoffeinKoll.View;
 import com.jfoenix.controls.JFXButton;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -19,16 +15,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
-import javafx.scene.shape.Arc;
-import javafx.scene.shape.ArcType;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-
-import javax.swing.*;
 
 public class HomePage extends Application{
 
@@ -46,19 +37,6 @@ public class HomePage extends Application{
             titleLabel.setFont(Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR, 46));
             titleLabel.setTextFill(Color.rgb(0, 70, 0));
 
-
-            // Creating buttons
-            /*Button accountButton = new Button("Statistics");
-            Button statisticsButton = new Button("Profile");
-            Button infoButton = new Button("Info");
-            Button logoutButton = new Button("Logout");
-
-            // Apply styles to buttons
-            accountButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
-            statisticsButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
-            infoButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
-            logoutButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
-*/
             String styleButtons = "-fx-background-color:\n" +
                     "            #090a0c,\n" +
                     "            linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%),\n" +
@@ -123,12 +101,10 @@ public class HomePage extends Application{
                     "    -fx-font-size: 30px;\n" +
                     "    -fx-padding: 10 20 10 20;");
 
-            //BorderPane.setMargin(logBeverageButton, new Insets(200,200,200,200));
 
 
             // Creating a BorderPane layout for main page
             BorderPane borderPane = new BorderPane();
-            //borderPane.setPadding(new Insets(20));
 
             // Creating a HBox for buttons
             HBox buttonHBox = new HBox(40);
@@ -146,18 +122,8 @@ public class HomePage extends Application{
                     "            linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%),\n" +
                     "            linear-gradient(#8fbc8f, #8fbc8f),\n" +
                     "            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));");
-           // BorderPane.setAlignment(buttonHBox, Pos.CENTER);
-
-            // Creating an Arc for caffeine intake display
-           /* Arc arc = new Arc(100, 100, 80, 80, 90, 0);
-            arc.setType(ArcType.OPEN);
-            arc.setStroke(Color.DARKGREEN);
-            arc.setStrokeWidth(10);
-            arc.setFill(null);
-            borderPane.setCenter(arc);*/
 
             CustomGauge customGauge = new CustomGauge();
-            //borderPane.setCenter(customGauge);
             BorderPane.setAlignment(customGauge, Pos.TOP_CENTER); // Center the gauge
             Insets gaugeMargins = new Insets(100, 200, 100, 200); // Top, Right, Bottom, Left
             BorderPane.setMargin(customGauge, gaugeMargins);
@@ -171,27 +137,10 @@ public class HomePage extends Application{
             topHBox.setAlignment(Pos.CENTER);
             borderPane.setTop(topHBox);
 
-            // Skapa knappen för "Log Beverage"
-            /*Button logBeverageButton = new Button("Log Beverage");
-
-            Label coffeeIcon = GlyphsDude.createIcon(FontAwesomeIcon.COFFEE, "2em");
-coffeeIcon.setStyle("-fx-text-fill: white;"); // Adjust color as needed
-
-// Add FontAwesomeIcon to the button
-logBeverageButton.setGraphic(coffeeIcon);
-
-// Apply styles to the button
-logBeverageButton.setStyle("-fx-background-color: #090a0c, linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%), linear-gradient(#8fbc8f, #8fbc8f), radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: \"Arial\"; -fx-font-size: 20px; -fx-padding: 10 20 10 20;");
-
-
-            // Tillämpa stil på knappen
-            logBeverageButton.setStyle("-fx-background-color: #004600; -fx-text-fill: #c2ffc2; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
-*/
             // Skapa en HBox för "Log Beverage" knappen
             HBox logBeverageButtonHBox = new HBox(logBeverageButton);
             logBeverageButtonHBox.setAlignment(Pos.CENTER);
             logBeverageButtonHBox.setSpacing(20);
-            //logBeverageButton.ge (GlyphsDude.createIcon(FontAwesomeIcon.COFFEE));
 
             Text coffeeIcon = GlyphsDude.createIcon(FontAwesomeIcon.COFFEE, "2em");
             coffeeIcon.setFill(Color.WHITE);

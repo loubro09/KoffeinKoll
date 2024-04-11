@@ -4,10 +4,9 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -48,7 +47,7 @@ public class LogInPage extends Application {
 
         TextField userNameField = textField();
         userNameField.setPromptText("Enter username");
-        TextField passwordField = textField();
+        PasswordField passwordField = new PasswordField();
         passwordField.setPromptText("Enter password ");
 
         Hyperlink registration = new Hyperlink("Not registered? Create an account!");
@@ -70,6 +69,14 @@ public class LogInPage extends Application {
 
         Button logInButton = new Button("Log in");
         logInButton.setStyle(styleButtons);
+
+        //event som hanterar att login knappens metod körs när du klickar på enter i lösenordsfältet
+        passwordField.addEventHandler(KeyEvent.KEY_PRESSED, ev -> {
+            if (ev.getCode() == KeyCode.ENTER) {
+                logInButton.fire();
+                ev.consume();
+            }
+        });
 
 
         GridPane gridPane = new GridPane();

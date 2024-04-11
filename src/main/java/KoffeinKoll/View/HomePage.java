@@ -1,5 +1,8 @@
 package KoffeinKoll.View;
 
+import com.jfoenix.controls.JFXButton;
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -21,8 +24,11 @@ import javafx.scene.shape.ArcType;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import javax.swing.*;
 
 public class HomePage extends Application{
 
@@ -42,7 +48,7 @@ public class HomePage extends Application{
 
 
             // Creating buttons
-            Button accountButton = new Button("Statistics");
+            /*Button accountButton = new Button("Statistics");
             Button statisticsButton = new Button("Profile");
             Button infoButton = new Button("Info");
             Button logoutButton = new Button("Logout");
@@ -52,21 +58,94 @@ public class HomePage extends Application{
             statisticsButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
             infoButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
             logoutButton.setStyle("-fx-background-color: #e4ffe4; -fx-text-fill: #004600; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
+*/
+            String styleButtons = "-fx-background-color:\n" +
+                    "            #090a0c,\n" +
+                    "            linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%),\n" +
+                    "            linear-gradient(#c0dbad, #8fbc8f),\n" +
+                    "            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                    "    -fx-background-radius: 5,4,3,5;\n" +
+                    "    -fx-background-insets: 0,1,2,0;\n" +
+                    "    -fx-text-fill: white;\n" +
+                    "    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                    "    -fx-font-family: \"Arial\";\n" +
+                    "    -fx-text-fill: linear-gradient(black, black);\n" +
+                    "    -fx-font-size: 20px;\n" +
+                    "    -fx-padding: 10 20 10 20;";
 
+            JFXButton statisticsButton = new JFXButton("Statistics");
+            JFXButton infoButton = new JFXButton("Info");
+            JFXButton accountButton = new JFXButton("Profile");
+            JFXButton logoutButton = new JFXButton("Log Out");
+
+            statisticsButton.setStyle(styleButtons);
+            infoButton.setStyle(styleButtons);
+            accountButton.setStyle(styleButtons);
+            logoutButton.setStyle(styleButtons);
+
+            Text chart = GlyphsDude.createIcon(FontAwesomeIcon.AREA_CHART, "2em");
+            chart.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            statisticsButton.setGraphic(chart);
+
+            Text info = GlyphsDude.createIcon(FontAwesomeIcon.INFO_CIRCLE, "2em");
+            info.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            infoButton.setGraphic(info);
+
+            Text account = GlyphsDude.createIcon(FontAwesomeIcon.USER, "2em");
+            account.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            accountButton.setGraphic(account);
+
+            Text log = GlyphsDude.createIcon(FontAwesomeIcon.SIGN_OUT, "2em");
+            log.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            logoutButton.setGraphic(log);
+
+
+            JFXButton logBeverageButton = new JFXButton("Log Beverage");
+            logBeverageButton.setStyle("-fx-background-color:\n" +
+                    "            #090a0c,\n" +
+                    "            linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%),\n" +
+                    "            linear-gradient(#8fbc8f, #8fbc8f),\n" +
+                    "            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));\n" +
+                    "    -fx-background-radius: 5,4,3,5;\n" +
+                    "    -fx-background-insets: 0,1,2,0;\n" +
+                    "    -fx-text-fill: white;\n" +
+                    "    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );\n" +
+                    "    -fx-font-family: \"Arial\";\n" +
+                    "    -fx-text-fill: linear-gradient(black, black);\n" +
+                    "    -fx-font-size: 30px;\n" +
+                    "    -fx-padding: 10 20 10 20;");
+
+            //BorderPane.setMargin(logBeverageButton, new Insets(200,200,200,200));
 
 
             // Creating a BorderPane layout for main page
             BorderPane borderPane = new BorderPane();
-            borderPane.setPadding(new Insets(20));
+            //borderPane.setPadding(new Insets(20));
 
             // Creating a HBox for buttons
             HBox buttonHBox = new HBox(40);
             buttonHBox.setAlignment(Pos.CENTER);
             buttonHBox.getChildren().addAll(accountButton, statisticsButton, infoButton, logoutButton);
+            buttonHBox.setPadding(new Insets(20));
             borderPane.setBottom(buttonHBox);
 
+
+
+
             // Apply style to button panel
-            buttonHBox.setStyle("-fx-background-color: #004600; -fx-padding: 20px;");
+            buttonHBox.setStyle("-fx-background-color:\n" +
+                    "            #090a0c,\n" +
+                    "            linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%),\n" +
+                    "            linear-gradient(#8fbc8f, #8fbc8f),\n" +
+                    "            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));");
            // BorderPane.setAlignment(buttonHBox, Pos.CENTER);
 
             // Creating an Arc for caffeine intake display
@@ -80,7 +159,7 @@ public class HomePage extends Application{
             CustomGauge customGauge = new CustomGauge();
             //borderPane.setCenter(customGauge);
             BorderPane.setAlignment(customGauge, Pos.TOP_CENTER); // Center the gauge
-            Insets gaugeMargins = new Insets(20, 200, 200, 200); // Top, Right, Bottom, Left
+            Insets gaugeMargins = new Insets(100, 200, 100, 200); // Top, Right, Bottom, Left
             BorderPane.setMargin(customGauge, gaugeMargins);
             borderPane.setCenter(customGauge);
 
@@ -93,15 +172,35 @@ public class HomePage extends Application{
             borderPane.setTop(topHBox);
 
             // Skapa knappen för "Log Beverage"
-            Button logBeverageButton = new Button("Log Beverage");
+            /*Button logBeverageButton = new Button("Log Beverage");
+
+            Label coffeeIcon = GlyphsDude.createIcon(FontAwesomeIcon.COFFEE, "2em");
+coffeeIcon.setStyle("-fx-text-fill: white;"); // Adjust color as needed
+
+// Add FontAwesomeIcon to the button
+logBeverageButton.setGraphic(coffeeIcon);
+
+// Apply styles to the button
+logBeverageButton.setStyle("-fx-background-color: #090a0c, linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%), linear-gradient(#8fbc8f, #8fbc8f), radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: \"Arial\"; -fx-font-size: 20px; -fx-padding: 10 20 10 20;");
+
 
             // Tillämpa stil på knappen
             logBeverageButton.setStyle("-fx-background-color: #004600; -fx-text-fill: #c2ffc2; -fx-font-size: 20px; -fx-min-width: 150px; -fx-min-height: 50px;");
-
+*/
             // Skapa en HBox för "Log Beverage" knappen
             HBox logBeverageButtonHBox = new HBox(logBeverageButton);
             logBeverageButtonHBox.setAlignment(Pos.CENTER);
             logBeverageButtonHBox.setSpacing(20);
+            //logBeverageButton.ge (GlyphsDude.createIcon(FontAwesomeIcon.COFFEE));
+
+            Text coffeeIcon = GlyphsDude.createIcon(FontAwesomeIcon.COFFEE, "2em");
+            coffeeIcon.setFill(Color.WHITE);
+
+// Add FontAwesomeIcon to the button
+            logBeverageButton.setGraphic(coffeeIcon);
+
+// Apply styles to the button
+            logBeverageButton.setStyle("-fx-background-color: #090a0c, linear-gradient(#8fbc8f 0%, #8fbc8f 20%, #8fbc8f 100%), linear-gradient(#8fbc8f, #8fbc8f), radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0)); -fx-background-radius: 5,4,3,5; -fx-background-insets: 0,1,2,0; -fx-text-fill: white; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: \"Arial\"; -fx-font-size: 20px; -fx-padding: 10 20 10 20;");
 
 
             // Skapa en ny VBox för att innehålla den nya "Log Beverage" knappen och den befintliga knappanelen
